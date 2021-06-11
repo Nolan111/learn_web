@@ -1,3 +1,6 @@
+from sqlalchemy.orm import session
+from models import Film
+from db import db_session
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -5,6 +8,26 @@ import requests
 import time
 import os
 from requests.api import patch
+
+
+def save_film_db(film_data):
+    try:
+        film = Film(
+            name=film_data["name"],
+            original_name=film_data["original_name"],
+            country=film_data["country"],
+            years=film_data["years"],
+            genres=film_data["genres"],
+            score_kinopoisk=film_data["score_kinopoisk"],
+            image=film_data["image"],
+            id=film_data["id"],
+        )
+
+        db_session.add(film)
+        db_session.commit()
+    except (Exception) as e:
+        db_session.rollback()
+        print("Data base Error - film_id", film_data["id"])
 
 
 def json_w(film_data, file_name):
@@ -63,10 +86,11 @@ def get_python_hd(html, film_id):
         image_url = f"https://randomfilms.ru{image}"
         image_name = f"films/image_{film_id}.jpeg"
 
-        if not dowload_image(url=image_url, name=image_name):
-            image_name = None
+        # if not dowload_image(url=image_url, name=image_name):
+        #     image_name = None
 
         film_data = {
+            "id": film_id,
             "name": name,
             "original_name": original_name,
             "country": country,
@@ -75,9 +99,11 @@ def get_python_hd(html, film_id):
             "score_kinopoisk": score_,
             "image": image_name,
         }
+        print(film_id)
         result.append(film_data)
 
-        json_w(result, file_name=str(film_id))
+        # json_w(result, file_name=str(film_id))
+        save_film_db(film_data)
 
     except Exception as e:
         print(film_id, "Error", e)
