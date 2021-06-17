@@ -13,9 +13,10 @@ import random
 def create_app():
     app = Flask(__name__)
 
+    films = [p for p in db_session.query(Film).all()]
+
     @app.route("/")
     def index():
-        films = [p for p in db_session.query(Film).all()]
         my_best__film = random.choice(films)
         result = {
             "name": my_best__film.name,
