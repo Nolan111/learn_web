@@ -5,7 +5,6 @@ from db import Base, engine
 
 class Film(Base):
     __tablename__ = "films"
-
     id = Column(Integer, primary_key=True)
     name = Column(String())
     original_name = Column(String())
