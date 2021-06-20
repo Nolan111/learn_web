@@ -14,6 +14,7 @@ def create_app():
     app = Flask(__name__)
 
     films = [p for p in db_session.query(Film).all()]
+    db_session.close()
 
     @app.route("/")
     def index():
