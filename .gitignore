@@ -123,4 +123,3 @@ dmypy.json
 .pyre/
 .vscode
 films
-db.py
