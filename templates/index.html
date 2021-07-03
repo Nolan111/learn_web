@@ -9,6 +9,12 @@
     <meta name="generator" content="Hugo 0.83.1">
     <title>Рандом фильм</title>
 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 
 
@@ -42,112 +48,171 @@
     <!-- Custom styles for this template -->
 
 </head>
+<html>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<head>
+    <meta charset="utf-8">
+    <title>Список</title>
+</head>
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">Random Film</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Год с
-                                </a>
-                                </button>
-                                </a>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-dark"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    По
-                                </a>
-                                </button>
-                                </a>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-dark"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Страна
-                                </a>
-                                </button>
-                                </a>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-dark"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Жанр
-                                </a>
-                                </button>
-                                </a>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-dark"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+</html>
+
+<body>
+    <!-- <form action="index.html"> -->
+
+    <body class="d-flex h-100 text-center text-white bg-dark">
+
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="mb-auto">
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="/">Random Film</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <form action="/" method="GET">
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Год с
+                                    </a>
+                                    </button>
+                                    </a>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <select name="from" id="from">
+                                            <option value="{{search_from_}}" selected="">{{search_from_}}</option>
+                                            {% for years in range(1915,2018) %}
+                                            <option value="{{ years }}">{{ years }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        По
+                                    </a>
+                                    </button>
+                                    </a>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <select name="to" id="to">
+                                            <option value="{{search_to}}" selected="">{{search_to}}</option>
+                                            {% for years in range(1915,2018) %}
+                                            <option value="{{ years }}">{{ years }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Страна
+                                    </a>
+                                    </button>
+                                    </a>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <select name="country" id="country">
+                                            <option value="{{search_country}}" selected="">{{search_country}}</option>
+                                            {% for country in countries_list %}
+                                            <option value="{{ country }}">{{ country }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Жанр
+                                    </a>
+                                    </button>
+                                    </a>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <select name="genere" id="genere">
+                                            <option value="{{search_genere}}" selected="">{{search_genere}}</option>
+                                            {% for genere in genres_list %}
+                                            <option value="{{ genere }}">{{ genere }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </ul>
+                                </li>
+                                <input type="submit" class="btn btn-lg btn-secondary fw-bold border-white bg-black">
+
+                            </ul>
+
+
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+                </form>
+    </body>
+    </header>
 
-        <main class="px-3">
-            <h1>{{name}}</h1>
-            <p class="lead">{{original_name}}</p>
-            <p class="lead">{{country}}</p>
-            <p class="lead">{{years}}</p>
-            <p class="lead">{{genres}}</p>
-            <p class="lead">{{score_kinopoisk}}</p>
-            <img src="{{image}}" alt="альтернативный текст">
+    <main class="px-3">
+        <h1>{{name}}</h1>
+        <p class="lead">{{original_name}}</p>
+        <p class="lead">{{country}}</p>
+        <p class="lead">{{years}}</p>
+        <p class="lead">{{genres}}</p>
+        <p class="lead">{{score_kinopoisk}}</p>
+        <br>
+        <a class="link-online" target="_blank" href="https://www.google.com/search?q=фильм+{{name}}"><strong>Ссылка
+                в
+                Google
+                {{name}}</strong></a>
+        <br>
+        <br>
+        <a class="link-online" target="_blank"
+            href="https://www.youtube.com/results?search_query=+русский+трейлер+{{name}}"><strong>Ссылка
+                в
+                youtube
+                {{name}}</strong></a>
+        <br>
+        <img src="{{image}}" alt={{name}}>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HwY1UqW3cgY" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
 
-            <p class="lead">
-                <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Следующий</a>
-            </p>
-        </main>
+        <p class="lead">
+            <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Следующий</a>
 
-        <footer class="mt-auto text-white-50">
-            <p>Source <a href="https://github.com/Nolan111/learn_web" class="text-white">github</a>, by
-                <a href="https://pbs.twimg.com/media/DI3zrNjW0AAEYMh?format=jpg&name=large"
-                    class="text-white">@NolanIgor</a>.
-            </p>
-        </footer>
+        </p>
+        <br>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+        <p>Source <a href="https://github.com/Nolan111/learn_web" class="text-white">github</a>, by
+            <a href="https://pbs.twimg.com/media/DI3zrNjW0AAEYMh?format=jpg&name=large"
+                class="text-white">@NolanIgor</a>.
+        </p>
+    </footer>
     </div>
 
 
 
 </body>
+<html>
 
-</html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег FORM</title>
+</head>
