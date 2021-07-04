@@ -165,14 +165,19 @@
     </body>
     </header>
 
-    <main class="px-3">
-        <h1>{{name}}</h1>
+    <!-- Jumbotron -->
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white " style="
+background-image: url('https://storage.yandexcloud.net/filmimg/imgfilm/image_{{id}}.jpeg');
+height: 100vh;
+">
+        <h1 class="mb-3 h2">{{name}}</h1>
+
+        <p>
         <p class="lead">{{original_name}}</p>
         <p class="lead">{{country}}</p>
         <p class="lead">{{years}}</p>
         <p class="lead">{{genres}}</p>
         <p class="lead">{{score_kinopoisk}}</p>
-        <br>
         <a class="link-online" target="_blank" href="https://www.google.com/search?q=фильм+{{name}}"><strong>Ссылка
                 в
                 Google
@@ -184,20 +189,20 @@
                 в
                 youtube
                 {{name}}</strong></a>
-        <br>
-        <img src="https://storage.yandexcloud.net/filmimg/imgfilm/image_{{id}}.jpeg" alt={{name}}>
-        <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HwY1UqW3cgY" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-
-        <p class="lead">
-            <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Следующий</a>
 
         </p>
+        </p>
+    </div>
+    <p class="lead">
+        <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Следующий</a>
+        <!-- Jumbotron -->
+        <!-- <br>
+    <iframe width=" 560" height="315" src="https://www.youtube.com/embed/HwY1UqW3cgY" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe> -->
+
         <br>
-    </main>
+        </main>
 
     <footer class="mt-auto text-white-50">
         <p>Source <a href="https://github.com/Nolan111/learn_web" class="text-white">github</a>, by
