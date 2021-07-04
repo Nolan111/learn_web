@@ -63,7 +63,7 @@ def create_app():
             years=my_best__film.years,
             genres=", ".join(my_best__film.genres),
             score_kinopoisk=my_best__film.score_kinopoisk,
-            image="https://upload.wikimedia.org/wikipedia/ru/6/61/Lock_Stock_and_Two_Smoking_Barrels_Poster.jpg",
+            id=my_best__film.id,
         )
 
     return app
