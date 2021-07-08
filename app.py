@@ -5,6 +5,7 @@ from models import Film
 
 import random
 from filter import countries_filter, genres_filter
+from youtub import get_video_id
 
 genres_list = list(genres_filter)
 genres_list.sort()
@@ -51,6 +52,7 @@ def create_app():
 
         return render_template(
             "index.html",
+            video_id=get_video_id(my_best__film.name),
             countries_list=countries_list,
             genres_list=genres_list,
             search_genere=genere,

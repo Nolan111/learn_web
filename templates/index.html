@@ -186,13 +186,13 @@ height: 100vh;background-repeat:no-repeat;background-position: center;background
         <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{years}}</h1>
         <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{genres}}</h1>
         <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{score_kinopoisk}}</h1>
-        <a class="link-online" target="_blank" href="https://www.google.com/search?q=фильм+{{name}}"><strong>Ссылка
+        <a class=" text-danger" target="_blank" href="https://www.google.com/search?q=фильм+{{name}}"><strong>Ссылка
                 в
                 Google
                 {{name}}</strong></a>
         <br>
         <br>
-        <a class="link-online" target="_blank"
+        <a class="text-danger" target="_blank"
             href="https://www.youtube.com/results?search_query=+русский+трейлер+{{name}}"><strong>Ссылка
                 в
                 youtube
@@ -204,10 +204,11 @@ height: 100vh;background-repeat:no-repeat;background-position: center;background
     <p class="lead">
         <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Следующий</a>
         <!-- Jumbotron -->
-        <!-- <br>
-    <iframe width=" 560" height="315" src="https://www.youtube.com/embed/HwY1UqW3cgY" title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe> -->
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video_id}}" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
 
         <br>
         </main>
