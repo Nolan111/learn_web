@@ -13,6 +13,7 @@ class Film(Base):
     genres = Column(ARRAY(String))
     score_kinopoisk = Column(String(25))
     image = Column(String(25))
+    youtube_trailer_id = Column(String(25))
 
     def __repr__(self):
         return f"Film {self.id}, {self.name}"

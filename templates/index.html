@@ -13,8 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 
 
@@ -34,7 +34,11 @@
             -webkit-text-stroke: 1px black;
             -webkit-text-fill-color: white;
         }
-
+        .link-google {
+            font-size: 2rem;
+            -webkit-text-stroke: 1px black;
+            -webkit-text-fill-color: tomato;
+        }
 
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -174,51 +178,47 @@
 
     <!-- Jumbotron -->
     <div class="bg-image p-5" style="
-background-image: url('https://storage.yandexcloud.net/filmimg/imgfilm/image_{{id}}.jpeg');
-height: 100vh;background-repeat:no-repeat;background-position: center;background-size: cover;
-">
+        background-image: url('https://storage.yandexcloud.net/filmimg/imgfilm/image_{{id}}.jpeg');
+        height: 100vh;background-repeat:no-repeat;background-position: center;background-size: cover;
+        ">
         <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{name}}</h1>
 
 
         <p>
-        <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{original_name}}</h1>
-        <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{country}}</h1>
-        <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{years}}</h1>
-        <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{genres}}</h1>
-        <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{score_kinopoisk}}</h1>
-        <a class=" text-danger" target="_blank" href="https://www.google.com/search?q=фильм+{{name}}"><strong>Ссылка
-                в
-                Google
-                {{name}}</strong></a>
-        <br>
-        <br>
-        <a class="text-danger" target="_blank"
-            href="https://www.youtube.com/results?search_query=+русский+трейлер+{{name}}"><strong>Ссылка
-                в
-                youtube
-                {{name}}</strong></a>
+            <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{original_name}}</h1>
+            <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{country}}</h1>
+            <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{years}}</h1>
+            <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{genres}}</h1>
+            <h1 class="mb-3 text-center shadow-1-strong rounded mb-5 text-white">{{score_kinopoisk}}</h1>
+            <a class="link-google " target="_blank" href="https://www.google.com/search?q=фильм+{{name}}"><strong>Ссылка
+                    в
+                    Google
+                    {{name}}</strong></a>
+            <br>
+            <br>
+
 
         </p>
         </p>
+        <p class="lead">
+            
+            <!-- Jumbotron -->
+            <br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video_id}}"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <br>
+            </main>
+
+            <footer class="mt-auto text-white-50">
+                <p>Source <a href="https://github.com/Nolan111/learn_web" class="text-white">github</a>, by
+                    <a href="https://pbs.twimg.com/media/DI3zrNjW0AAEYMh?format=jpg&name=large"
+                        class="text-white">@NolanIgor</a>.
+                </p>
+            </footer>
     </div>
-    <p class="lead">
-        <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Следующий</a>
-        <!-- Jumbotron -->
-        <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video_id}}" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-
-        <br>
-        </main>
-
-    <footer class="mt-auto text-white-50">
-        <p>Source <a href="https://github.com/Nolan111/learn_web" class="text-white">github</a>, by
-            <a href="https://pbs.twimg.com/media/DI3zrNjW0AAEYMh?format=jpg&name=large"
-                class="text-white">@NolanIgor</a>.
-        </p>
-    </footer>
     </div>
 
 

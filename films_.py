@@ -1,11 +1,9 @@
-from sqlalchemy.orm import session
 from models import Film
 from db import db_session
 import requests
 from bs4 import BeautifulSoup
 import json
 import requests
-import time
 import os
 from requests.api import patch
 
@@ -86,8 +84,8 @@ def get_python_hd(html, film_id):
         image_url = f"https://randomfilms.ru{image}"
         image_name = f"films/image_{film_id}.jpeg"
 
-        # if not dowload_image(url=image_url, name=image_name):
-        #     image_name = None
+        if not dowload_image(url=image_url, name=image_name):
+            image_name = None
 
         film_data = {
             "id": film_id,
@@ -102,8 +100,8 @@ def get_python_hd(html, film_id):
 
         result.append(film_data)
 
-        # json_w(result, file_name=str(film_id))
-        # save_film_db(film_data)
+        json_w(result, file_name=str(film_id))
+        save_film_db(film_data)
 
     except Exception as e:
         print(film_id, "Error", e)

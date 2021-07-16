@@ -52,7 +52,7 @@ def create_app():
 
         return render_template(
             "index.html",
-            video_id=get_video_id(my_best__film.name),
+            video_id=my_best__film.youtube_trailer_id,
             countries_list=countries_list,
             genres_list=genres_list,
             search_genere=genere,
